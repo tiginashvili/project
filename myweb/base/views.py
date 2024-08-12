@@ -1,10 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .models import Note, User, Type
-from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 from django.contrib import messages
 from .forms import MyUserCreationForm, NoteForm, UserForm
 #pip freeze > requirements.txt
@@ -13,21 +10,13 @@ from .forms import MyUserCreationForm, NoteForm, UserForm
 #pip install pipreqs
 #pipreqs
 #pipreqs --force
+
 # Create your views here.
 def home(request):
     notes = Note.objects.filter(creator=request.user.id)
     context = {"notes": notes}
 
     return render(request, 'base/home.html', context)
-
-
-# def adding(request, id):
-#     book = Book.objects.get(id=id)
-#
-#     user = request.user
-#     user.books.add(book)
-#
-#     return redirect('home')
 
 def login_page(request):
     #ბოლოს
