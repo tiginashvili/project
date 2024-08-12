@@ -1,0 +1,43 @@
+    <style>
+        .home-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+        }
+
+        .genres {
+            margin: 50px 30px;
+        }
+
+
+        .row{
+            display: flex;
+            flex-direction: row;
+          }
+
+    </style>
+        <div>
+            <br>
+            <div class="object">
+                <h1 class="main" id="new">Notes:</h1>
+            </div>
+            <a href="{% url 'add' %}">Add Note</a>
+            <br>
+            <div class="row">
+                {% for note in notes %}
+                    <div style="margin: 30px 10px;">
+                      <div>
+                        <h4>{{note.type}}</h4>
+                        <h5>{{note.name}} {{note.creator}} {{note.created}}</h5>
+                        <p>{{note.description}}</p>
+                        {% if request.user.is_authenticated %}
+                            {% if request.user == note.creator %}
+                                <a href="{% url 'delete_note' note.id %}" target=”_blank” class="btn btn-primary">Delete</a>
+                            {% endif %}
+                        {% endif %}
+                      </div>
+                    </div>
+                    <hr>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
