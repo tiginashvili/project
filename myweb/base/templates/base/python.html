@@ -1,0 +1,92 @@
+{% extends 'main.html' %}
+
+{% block title %}
+<title>Python Programming Language</title> {% endblock %}
+
+{% block content %}
+
+<style>
+    .content {
+        font-family: Arial, sans-serif;
+        color: #333;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+    .content header {
+        background-color: #306998;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+    }
+    .content header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    .content .container {
+        width: 80%;
+        margin: 2rem auto;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .content .container img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .content h2 {
+        color: #306998;
+        font-size: 2rem;
+        border-bottom: 2px solid #306998;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .content p {
+        line-height: 1.6;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .content footer {
+        background-color: #306998;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+</style>
+<br>
+<div class="container">
+    <h2>Introduction</h2>
+    <img src="https://www.svgrepo.com/show/376344/python.svg" alt="Python Logo" height="400px" width="300px">
+    <p>Python is an interpreted, high-level, and general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python's syntax allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java.</p>
+
+    <h2>Features</h2>
+    <p>Python is known for its simplicity and ease of learning. Some key features include:</p>
+    <ul>
+        <li>Easy to Read, Learn, and Write</li>
+        <li>Interpreted Language</li>
+        <li>Object-Oriented</li>
+        <li>Extensive Standard Library</li>
+        <li>Dynamic Typing</li>
+        <li>Automatic Memory Management</li>
+    </ul>
+    <img src="https://careertraining.wwu.edu/common/images/2/21042/java-programmer-python-dev-935x572.jpg" alt="Python Features" height="500px" width="400px">
+
+    <h2>Applications</h2>
+    <p>Python is versatile and used in various domains, including:</p>
+    <ul>
+        <li>Web Development (e.g., Django, Flask)</li>
+        <li>Data Science and Machine Learning (e.g., NumPy, pandas, scikit-learn)</li>
+        <li>Automation/Scripting</li>
+        <li>Software Development</li>
+        <li>Game Development</li>
+    </ul>
+</div><br><br>
+<footer class="content-footer">
+    <p>&copy; 2024 Python Enthusiasts</p>
+</footer>
+{% endblock %}

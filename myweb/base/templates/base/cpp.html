@@ -1,0 +1,93 @@
+{% extends 'main.html' %}
+
+{% block title %}
+<title>C++ Programming Language</title> 
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .content {
+        font-family: Arial, sans-serif;
+        color: #333;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+    .content header {
+        background-color: #004482;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+    }
+    .content header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    .content .container {
+        width: 80%;
+        margin: 2rem auto;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .content .container img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .content h2 {
+        color: #004482;
+        font-size: 2rem;
+        border-bottom: 2px solid #004482;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .content p {
+        line-height: 1.6;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .content footer {
+        background-color: #004482;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+</style>
+<br>
+<div class="container">
+    <h2>Introduction</h2>
+    <img src="https://cdn.worldvectorlogo.com/logos/c--4.svg" alt="C++ Logo" height="300px" width="50px">
+    <p>C++ is a powerful, high-performance, and general-purpose programming language that is widely used for system/software development. It was developed as an extension of the C programming language and includes object-oriented, generic, and functional programming features.</p>
+
+    <h2>Features</h2>
+    <p>C++ is known for its efficiency and control over system resources. Some key features include:</p>
+    <ul>
+        <li>High Performance</li>
+        <li>Object-Oriented</li>
+        <li>Low-Level Memory Manipulation</li>
+        <li>Rich Standard Library</li>
+        <li>Multi-Paradigm Language</li>
+        <li>Portability</li>
+    </ul>
+    <img src="https://careertraining.wwu.edu/common/images/2/21042/java-programmer-python-dev-935x572.jpg" alt="C++ Features" height="500px" width="400px">
+
+    <h2>Applications</h2>
+    <p>C++ is widely used in various domains, including:</p>
+    <ul>
+        <li>System/Software Development (e.g., Operating Systems, Compilers)</li>
+        <li>Game Development</li>
+        <li>Embedded Systems</li>
+        <li>High-Performance Applications</li>
+        <li>Real-Time Systems</li>
+    </ul>
+</div><br><br>
+<footer class="content-footer">
+    <p>&copy; 2024 C++ Enthusiasts</p>
+</footer>
+{% endblock %}
