@@ -1,25 +1,16 @@
 from django.shortcuts import render, redirect
-from .models import Note, User, Type
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from .models import Note, User, Type
 from .forms import MyUserCreationForm, NoteForm, UserForm
-#pip freeze > requirements.txt
-#pip install -r requirements.txt
 
-#pip install pipreqs
-#pipreqs
-#pipreqs --force
-
-# Create your views here.
 def home(request):
     notes = Note.objects.filter(creator=request.user.id)
     context = {"notes": notes}
-
     return render(request, 'base/home.html', context)
 
 def login_page(request):
-    #ბოლოს
     page = "login"
     if request.user.is_authenticated:
         return redirect('home')
@@ -29,19 +20,18 @@ def login_page(request):
         password = request.POST.get('password')
         try:
             user = User.objects.get(username=username)
-        except:
+        except User.DoesNotExist:
             messages.error(request, "User doesn't exist!")
+            return render(request, "base/login_register.html", {"page": page})
+
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             return redirect('home')
         else:
-            messages.error(request, "Username or Password doesn't exist!")
+            messages.error(request, "Username or Password is incorrect!")
 
-    context = {"page": page}
-    return render(request, "base/login_register.html", context)
-
-
+    return render(request, "base/login_register.html", {"page": page})
 
 def logout_user(request):
     logout(request)
@@ -62,10 +52,8 @@ def register_page(request):
 
     return render(request, 'base/login_register.html', {'form': form})
 
-
 def add_note(request):
     types = Type.objects.all()
-
     form = NoteForm()
     if request.method == "POST":
         form = NoteForm(request.POST)
@@ -73,27 +61,21 @@ def add_note(request):
             form.save()
             return redirect('home')
         else:
-            messages.error(request, "Book Already Exists!")
+            messages.error(request, "Error occurred while adding the note!")
 
     return render(request, 'base/add_note.html', {'form': form, 'types': types})
 
-
-
-
 def delete_note(request, id):
     note = Note.objects.get(id=id)
-
     if request.method == "POST":
         note.delete()
         return redirect('home')
     return render(request, 'base/delete.html', {'obj': note})
 
-
 @login_required(login_url='login')
 def update_user(request):
     user = request.user
     form = UserForm(instance=user)
-
     if request.method == "POST":
         form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
@@ -102,5 +84,9 @@ def update_user(request):
 
     return render(request, "base/update-user.html", {'form': form})
 
+def python(request):
+    return render(request, 'base/python.html')
 
+def cpp(request):
+    return render(request, 'base/cpp.html')
 

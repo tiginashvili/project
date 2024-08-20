@@ -1,9 +1,166 @@
-{% extends 'main.html'%}
+{% extends 'main.html' %}
 
 {% block title %}
     <title>Home Page</title>
 {% endblock %}
 
-{%block content%}
+{% block content %}
     {% include 'base/notes.html' %}
+
+    <div class="quick-nav">
+        <h2>Quick Navigation</h2>
+        <ul>
+            <li><a href="#python-basics">Python Basics</a></li>
+            <li><a href="#oop">Object-Oriented Programming</a></li>
+            <li><a href="#django">Web Development with Django</a></li>
+        </ul>
+        <p>
+    <img src="https://www.krome.sg/wp-content/media/functionality-vs-aesthetics-web-design.jpg" height="500px" width="200px">
+</p>
+    </div>
+
+
+    <div class="notes-container">
+        <h2>Programming Notes</h2>
+
+        <div class="note" id="python-basics">
+            <h3>Python Basics</h3>
+            <p>Python is a versatile programming language known for its simplicity and readability. Below are some fundamental concepts:</p>
+            <ul>
+                <li><strong>Variables:</strong> Used to store data values.</li>
+                <li><strong>Functions:</strong> Reusable blocks of code that perform specific tasks.</li>
+                <li><strong>Data Types:</strong> Integers, Strings, Lists, Dictionaries, etc.</li>
+            </ul>
+        </div>
+
+        <div class="note" id="oop">
+            <h3>Object-Oriented Programming (OOP) in Python</h3>
+            <p>OOP is a programming paradigm based on the concept of "objects". Key principles include:</p>
+            <ul>
+                <li><strong>Classes:</strong> Blueprints for creating objects (instances).</li>
+                <li><strong>Inheritance:</strong> Mechanism by which a new class can inherit attributes and methods from another class.</li>
+                <li><strong>Polymorphism:</strong> Ability to use a common interface for multiple forms (data types).</li>
+            </ul>
+        </div>
+
+        <div class="note" id="django">
+            <h3>Web Development with Django</h3>
+            <p>Django is a high-level Python web framework that encourages rapid development. Key components include:</p>
+            <ul>
+                <li><strong>Models:</strong> Define the data structure of your application.</li>
+                <li><strong>Views:</strong> Handle the logic for your application.</li>
+                <li><strong>Templates:</strong> Define how your data is presented.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related-resources">
+        <h2>Related Resources</h2>
+        <ul>
+            <li><a href="https://docs.python.org/3/tutorial/" target="_blank">Python Official Documentation</a></li>
+            <li><a href="https://docs.djangoproject.com/en/stable/" target="_blank">Django Official Documentation</a></li>
+            <li><a href="https://www.learnpython.org/" target="_blank">Learn Python Online</a></li>
+        </ul>
+    </div>
+
+
+
+    <div class="did-you-know">
+        <h2>Did You Know?</h2>
+        <p>Did you know that Python was named after the Monty Python comedy group? Guido van Rossum, the creator of Python, was a fan of their work.</p>
+    </div>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What is Python?</h3>
+            <p>Python is a high-level, interpreted programming language known for its simplicity and versatility.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is Django?</h3>
+            <p>Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.</p>
+        </div>
+    </div>
+
+    <style>
+
+        .notes-container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .note {
+            margin-bottom: 20px;
+        }
+
+        .note h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .note p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .note ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .note ul li {
+            margin-bottom: 5px;
+        }
+
+        .quick-nav, .related-resources, .feedback-section, .did-you-know, .faq-section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .quick-nav ul, .related-resources ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quick-nav ul li, .related-resources ul li {
+            margin-bottom: 10px;
+        }
+
+        .quick-nav a, .related-resources a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .quick-nav a:hover, .related-resources a:hover {
+            text-decoration: underline;
+        }
+
+        .feedback-section textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .feedback-section button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .feedback-section button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
 {% endblock %}
